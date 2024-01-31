@@ -65,6 +65,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - name: granting x to mvnw
+        run: chmod +x ./mvnw
+
+      - name: checker
+        run: ./mvnw dependency:tree -DoutputType=dot --batch-mode --non-recursive --file="pom.xml
+
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/maven@master
         continue-on-error: true # To make sure that SARIF upload gets called
