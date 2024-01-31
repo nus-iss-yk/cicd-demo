@@ -69,7 +69,6 @@ jobs:
           continue-on-error: true # To make sure that SARIF upload gets called
           env:
             SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-            SYNK_AUTH_TOKEN: ${{ secrets.SYNK_PAT }} # Use the PAT as an authentication token
           with:
             args: --sarif-file-output=snyk.sarif
   
@@ -78,4 +77,4 @@ jobs:
     
           with:
             sarif_file: snyk.sarif
-            SYNK_AUTH_TOKEN: ${{ secrets.SYNK_PAT }} # Use the PAT as an authentication token
+            token: ${{ secrets.SYNK_PAT }} # Use the PAT as an authentication token
