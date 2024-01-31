@@ -64,6 +64,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
+      - name: Listing directory
+        run: ls
       - name: Set executable permission to mvnw
         run: chmod +x mvnw
       - name: Run Snyk to check for vulnerabilities
