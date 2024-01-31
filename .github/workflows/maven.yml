@@ -75,5 +75,7 @@ jobs:
   
         - name: Upload result to GitHub Code Scanning
           uses: github/codeql-action/upload-sarif@v3
+    
           with:
             sarif_file: snyk.sarif
+            SYNK_AUTH_TOKEN: ${{ secrets.SYNK_PAT }} # Use the PAT as an authentication token
