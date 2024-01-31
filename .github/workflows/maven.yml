@@ -69,7 +69,7 @@ jobs:
         run: chmod +x ./mvnw
 
       - name: checker
-        run: ./mvnw dependency:tree -DoutputType=dot --batch-mode --non-recursive --file="pom.xml
+        run: ./mvnw dependency:tree -DoutputType=dot --batch-mode --non-recursive --file="pom.xml"
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/maven@master
